@@ -1,9 +1,13 @@
+// src/app/pages/my-universe/my-universe.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SupabaseService } from '../../services/supabase.service';
+import { NgIf, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-my-universe',
+  standalone: true,
+  imports: [NgIf, JsonPipe], // needed for *ngIf and | json
   template: `
     <div *ngIf="user; else notLoggedIn">
       <h1>Welcome, {{ user.email }}</h1>

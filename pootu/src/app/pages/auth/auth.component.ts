@@ -1,9 +1,13 @@
+// src/app/pages/auth/auth.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { SupabaseService } from '../../services/supabase.service';
 
 @Component({
   selector: 'app-auth',
+  standalone: true,
+  imports: [FormsModule], // for [(ngModel)]
   template: `
     <div class="auth-container">
       <h2>{{ isLogin ? 'Login' : 'Signup' }}</h2>
@@ -29,23 +33,14 @@ export class AuthComponent {
 
   async onSubmit() {
     try {
-      let result;
-      if (this.isLogin) {
-        result = await this.supabase.signIn(this.email, this.password);
-      } else {
-        result = await this.supabase.signUp(this.email, this.password);
-      }
+      const result = this.isLogin
+        ? await this.supabase.signIn(this.email, this.password)
+        : await this.supabase.signUp(this.email, this.password);
 
       if (result.error) throw result.error;
-
       this.router.navigate(['/my-universe']);
-    } catch (error) {
-      console.error('Auth error:', error);
-      if (error instanceof Error) {
-        alert(error.message);
-      } else {
-        alert(String(error));
-      }
+    } catch (error: any) {
+      alert(error.message);
     }
   }
 

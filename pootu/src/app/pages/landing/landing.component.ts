@@ -1,8 +1,11 @@
+// src/app/pages/landing/landing.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
+  standalone: true,
+  imports: [],
   template: `
     <div class="container">
       <h1>Welcome to My App</h1>
