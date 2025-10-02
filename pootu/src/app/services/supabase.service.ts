@@ -9,8 +9,8 @@ export class SupabaseService {
 
   constructor() {
     this.supabase = createClient(
-      'https://YOUR_PROJECT_ID.supabase.co',   // replace with your Supabase URL
-      'YOUR_PUBLIC_ANON_KEY'                   // replace with your anon key
+      'https://jhgrbovufgekgqtveuwx.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoZ3Jib3Z1Zmdla2dxdHZldXd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkwNTA5ODksImV4cCI6MjA3NDYyNjk4OX0.5XlTXTKyiSy1sbhiffUlsQCTre20ST7q0vyVh8iv8zceyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoZ3Jib3Z1Zmdla2dxdHZldXd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkwNTA5ODksImV4cCI6MjA3NDYyNjk4OX0.5XlTXTKyiSy1sbhiffUlsQCTre20ST7q0vyVh8iv8zc'
     );
   }
 
